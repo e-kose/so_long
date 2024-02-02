@@ -6,11 +6,36 @@
 /*   By: ekose <ekose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:47:08 by ekose             #+#    #+#             */
-/*   Updated: 2024/02/01 17:48:32 by ekose            ###   ########.fr       */
+/*   Updated: 2024/02/02 21:06:27 by ekose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static	void ft_check_way(t_so_long *so_long, char **map)
+{
+	int	i;
+	int	j;
+	int check;
+
+	i = 0;
+	check = 0;
+	while(map[i])
+	{
+		j = -1;
+		while(map[i][++j])
+		{
+			if(map[i][j] == 'C' && map[i][j] != '\n'
+				&& map[i][j] == 'E')
+				check = 1;
+		}
+		free(map[i]);
+		i++;
+	}
+	free(map);
+	if (check == 1)
+		ft_free(so_long,"no valid road on the map");
+}
 
 static void	ft_close(t_so_long *so_long)
 {
@@ -21,9 +46,15 @@ static void	ft_close(t_so_long *so_long)
 		close(so_long->fd[i++]);
 }
 
-void	ft_flood_fill(t_so_long *so_long)
+static void	ft_flood_fill(char	**map, int	i , int	j)
 {
-	i
+	if(i < 1 || j < 1 || map[i][j] == '1' )
+		return ;
+	map[i][j] = '1';
+	ft_flood_fill(map,i + 1, j);
+	ft_flood_fill(map,i - 1, j);
+	ft_flood_fill(map,i, j + 1);
+	ft_flood_fill(map,i, j - 1);
 }
 
 void	ft_xpm_check(t_so_long *so_long)
@@ -51,18 +82,20 @@ void	ft_xpm_check(t_so_long *so_long)
 	ft_mlx(so_long);
 }
 
-int	ft_close_window(t_so_long *so_long)
+void	ft_cp_map(t_so_long *so_long)
 {
-	int	i;
+	int		i;
+	int		check;
+	char	**map;
 
+	map = (char **)malloc(sizeof(char *) * (so_long->y + 1));
 	i = 0;
-	while (i < so_long->y)
+	check == 0;
+	while(so_long->map_rows[i])
 	{
-		free(so_long->map_rows[i]);
+		map[i] = ft_strdup(so_long->map_rows[i]);
 		i++;
 	}
-	free(so_long->map_rows);
-	free(so_long);
-	mlx_destroy_window(so_long->mlx_connect, so_long->mlx_window);
-	exit(0);
+	ft_flood_fill(map,so_long->player[0],so_long->player[1]);
+	ft_check_way(so_long,map);
 }

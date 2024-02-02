@@ -6,7 +6,7 @@
 /*   By: ekose <ekose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 18:38:01 by ekose             #+#    #+#             */
-/*   Updated: 2024/02/01 14:09:20 by ekose            ###   ########.fr       */
+/*   Updated: 2024/02/02 13:57:10 by ekose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_mlx(t_so_long *so_long)
 	int	w;
 	int	h;
 
-	so_long->xpm = malloc(sizeof(t_xpm));
 	so_long->mlx_connect = mlx_init();
 	if (so_long->mlx_connect == NULL)
 		ft_free(so_long, "Error\nMlx Connection");
@@ -25,6 +24,7 @@ void	ft_mlx(t_so_long *so_long)
 			(so_long->x) * 64, (so_long->y) * 64, "so_long");
 	if (so_long->mlx_window == NULL)
 		ft_free(so_long, "Error\nWindow failed to open");
+	so_long->xpm = malloc(sizeof(t_xpm));
 	so_long->xpm->img_0 = mlx_xpm_file_to_image(so_long->mlx_connect,
 			"textures/ground.xpm", &w, &h);
 	so_long->xpm->img_w = mlx_xpm_file_to_image(so_long->mlx_connect,

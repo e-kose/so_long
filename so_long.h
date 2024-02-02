@@ -6,7 +6,7 @@
 /*   By: ekose <ekose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 14:12:28 by ekose             #+#    #+#             */
-/*   Updated: 2024/02/01 14:49:01 by ekose            ###   ########.fr       */
+/*   Updated: 2024/02/02 16:39:37 by ekose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <fcntl.h>
 # include "libft/libft.h"
 # include "GNL/get_next_line.h"
-# include "mlx/mlx.h"
+# include "minilibx-linux/mlx.h"
 
 typedef struct s_xpm
 {
@@ -63,6 +63,7 @@ int		ft_key(int key_code, t_so_long *so_long);
 void	ft_xpm_check(t_so_long *so_long);
 void	ft_free(t_so_long *so_long, char *s);
 void	ft_image_loop(t_so_long *so_long);
-int		ft_close_window(t_so_long *so_long);
+void	ft_cp_map(t_so_long *so_long);
+int		ft_full_free(t_so_long *so_long);
 
 #endif

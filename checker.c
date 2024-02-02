@@ -6,7 +6,7 @@
 /*   By: ekose <ekose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 14:49:05 by ekose             #+#    #+#             */
-/*   Updated: 2024/02/01 13:14:15 by ekose            ###   ########.fr       */
+/*   Updated: 2024/02/02 13:25:16 by ekose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ static void	ft_check_extension(t_so_long *so_long)
 
 	i = ft_strlen(so_long->argv) - 4;
 	if (ft_strncmp(&(so_long->argv[i]), ".ber", 4) != 0)
+	{
+		free(so_long);
 		ft_error_msg("Error\nWrong file extension");
+	}
 }
 
 void	ft_check_map_name(t_so_long *so_long)
@@ -28,10 +31,13 @@ void	ft_check_map_name(t_so_long *so_long)
 
 	map_way = ft_strjoin("map/", so_long->argv);
 	fd = open(map_way, O_RDONLY);
-	if (fd == -1)
-		ft_perror_msg("File");
-	close(fd);
 	free(map_way);
+	if (fd == -1)
+	{
+		free(so_long);
+		ft_perror_msg("File");
+	}
+	close(fd);
 	ft_check_extension(so_long);
 }
 

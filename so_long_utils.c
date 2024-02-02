@@ -6,7 +6,7 @@
 /*   By: ekose <ekose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 00:14:15 by ekose             #+#    #+#             */
-/*   Updated: 2024/02/01 12:56:06 by ekose            ###   ########.fr       */
+/*   Updated: 2024/02/02 16:35:17 by ekose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,12 @@ static	void	ft_total_row(t_so_long *so_long)
 	so_long->y = --i;
 	free(p);
 	free(map_way);
-	if (so_long->x >= 128 || so_long->y >= 128)
-		ft_error_msg("Map size isn't compatiable with mlx library.");
 	close(fd);
+	if (so_long->x >= 128 || so_long->y >= 128)
+	{
+		free(so_long);
+		ft_error_msg("Map size isn't compatiable with mlx library.");
+	}
 }
 
 void	ft_map_rows(t_so_long *so_long)

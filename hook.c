@@ -6,7 +6,7 @@
 /*   By: ekose <ekose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:12:20 by ekose             #+#    #+#             */
-/*   Updated: 2024/02/01 15:30:30 by ekose            ###   ########.fr       */
+/*   Updated: 2024/02/02 15:55:02 by ekose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_go_up(t_so_long *dt)
 		dt->c == 0)
 		{
 			write (1, "🎉Congratulations on a successful game 🎉", 46);
-			exit (0);
+			ft_full_free(dt);
 		}
 		mlx_clear_window(dt->mlx_connect, dt->mlx_window);
 		dt->map_rows[dt->player[0]][dt->player[1]] = '0';
@@ -54,7 +54,7 @@ void	ft_go_down(t_so_long *dt)
 		dt->c == 0)
 		{
 			write (1, "🎉Congratulations on a successful game 🎉", 46);
-			exit (0);
+			ft_full_free(dt);
 		}
 		mlx_clear_window(dt->mlx_connect, dt->mlx_window);
 		dt->map_rows[dt->player[0]][dt->player[1]] = '0';
@@ -80,7 +80,7 @@ void	ft_go_right(t_so_long *dt)
 		dt->c == 0)
 		{
 			write (1, "🎉Congratulations on a successful game 🎉", 46);
-			exit (0);
+			ft_full_free(dt);
 		}
 		mlx_clear_window(dt->mlx_connect, dt->mlx_window);
 		dt->map_rows[dt->player[0]][dt->player[1]] = '0';
@@ -106,7 +106,7 @@ void	ft_go_left(t_so_long *dt)
 		dt->c == 0)
 		{
 			write (1, "🎉Congratulations on a successful game 🎉", 46);
-			exit (0);
+			ft_full_free(dt);
 		}
 		mlx_clear_window(dt->mlx_connect, dt->mlx_window);
 		dt->map_rows[dt->player[0]][dt->player[1]] = '0';
@@ -119,16 +119,16 @@ void	ft_go_left(t_so_long *dt)
 
 int	ft_key(int key_code, t_so_long *so_long)
 {
-	if (key_code == 13 || key_code == 126)
+	if (key_code == 13 || key_code == 126 || key_code == 119)
 		ft_go_up(so_long);
-	else if (key_code == 1 || key_code == 125)
+	else if (key_code == 1 || key_code == 125|| key_code == 115)
 		ft_go_down(so_long);
-	else if (key_code == 2 || key_code == 124)
+	else if (key_code == 2 || key_code == 124|| key_code == 100)
 		ft_go_right(so_long);
-	else if (key_code == 0 || key_code == 123)
+	else if (key_code == 0 || key_code == 123|| key_code == 97)
 		ft_go_left(so_long);
-	else if (key_code == 53)
-		exit(0);
+	else if (key_code == 53 || key_code == 65307)
+		ft_full_free(so_long);
 	if (so_long->player[0] == so_long->exit[0]
 		&& so_long->player[1] == so_long->exit[1])
 	{
