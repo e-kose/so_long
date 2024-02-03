@@ -6,7 +6,7 @@
 /*   By: ekose <ekose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 14:12:28 by ekose             #+#    #+#             */
-/*   Updated: 2024/02/02 16:39:37 by ekose            ###   ########.fr       */
+/*   Updated: 2024/02/03 12:33:48 by ekose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <fcntl.h>
 # include "libft/libft.h"
 # include "GNL/get_next_line.h"
-# include "minilibx-linux/mlx.h"
+# include "mlx/mlx.h"
 
 typedef struct s_xpm
 {

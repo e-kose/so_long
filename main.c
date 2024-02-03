@@ -6,7 +6,7 @@
 /*   By: ekose <ekose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 14:11:53 by ekose             #+#    #+#             */
-/*   Updated: 2024/02/02 16:40:47 by ekose            ###   ########.fr       */
+/*   Updated: 2024/02/03 18:35:30 by ekose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 	ft_xpm_check(so_long);
 	ft_image_loop(so_long);
 	mlx_key_hook(so_long->mlx_window, ft_key, so_long);
-	mlx_hook(so_long->mlx_window, 17, 0, ft_full_free, so_long);
+	mlx_hook(so_long->mlx_window, 17, 0L, ft_full_free, so_long);
 	mlx_loop(so_long->mlx_connect);
-
+	return (0);
 }

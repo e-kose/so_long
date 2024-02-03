@@ -6,7 +6,7 @@
 /*   By: ekose <ekose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:12:20 by ekose             #+#    #+#             */
-/*   Updated: 2024/02/02 15:55:02 by ekose            ###   ########.fr       */
+/*   Updated: 2024/02/03 18:40:27 by ekose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_go_up(t_so_long *dt)
 {
-	char	*value;
-
 	if (dt->map_rows[dt->player[0] - 1][dt->player[1]] != '1')
 	{
 		dt->movement++;
@@ -40,8 +38,6 @@ void	ft_go_up(t_so_long *dt)
 
 void	ft_go_down(t_so_long *dt)
 {
-	char	*value;
-
 	if (dt->map_rows[dt->player[0] + 1][dt->player[1]] != '1')
 	{
 		dt->movement++;
@@ -66,8 +62,6 @@ void	ft_go_down(t_so_long *dt)
 
 void	ft_go_right(t_so_long *dt)
 {
-	char	*value;
-
 	if (dt->map_rows[dt->player[0]][dt->player[1] + 1] != '1')
 	{
 		dt->movement++;
@@ -92,8 +86,6 @@ void	ft_go_right(t_so_long *dt)
 
 void	ft_go_left(t_so_long *dt)
 {
-	char	*value;
-
 	if (dt->map_rows[dt->player[0]][dt->player[1] - 1] != '1')
 	{
 		dt->movement++;
@@ -119,15 +111,15 @@ void	ft_go_left(t_so_long *dt)
 
 int	ft_key(int key_code, t_so_long *so_long)
 {
-	if (key_code == 13 || key_code == 126 || key_code == 119)
+	if (key_code == 13 || key_code == 126)
 		ft_go_up(so_long);
-	else if (key_code == 1 || key_code == 125|| key_code == 115)
+	else if (key_code == 1 || key_code == 125)
 		ft_go_down(so_long);
-	else if (key_code == 2 || key_code == 124|| key_code == 100)
+	else if (key_code == 2 || key_code == 124)
 		ft_go_right(so_long);
-	else if (key_code == 0 || key_code == 123|| key_code == 97)
+	else if (key_code == 0 || key_code == 123)
 		ft_go_left(so_long);
-	else if (key_code == 53 || key_code == 65307)
+	else if (key_code == 53)
 		ft_full_free(so_long);
 	if (so_long->player[0] == so_long->exit[0]
 		&& so_long->player[1] == so_long->exit[1])
@@ -142,6 +134,3 @@ int	ft_key(int key_code, t_so_long *so_long)
 	ft_image_loop(so_long);
 	return (0);
 }
-
-
-

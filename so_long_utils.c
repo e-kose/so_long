@@ -6,7 +6,7 @@
 /*   By: ekose <ekose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 00:14:15 by ekose             #+#    #+#             */
-/*   Updated: 2024/02/02 16:35:17 by ekose            ###   ########.fr       */
+/*   Updated: 2024/02/03 13:56:43 by ekose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ static	void	ft_total_row(t_so_long *so_long)
 	so_long->y = --i;
 	free(p);
 	free(map_way);
-	close(fd);
 	if (so_long->x >= 128 || so_long->y >= 128)
 	{
 		free(so_long);

@@ -17,7 +17,7 @@ AR = ar
 all: $(NAME)
 
 $(NAME) : $(OBJECTS)
-	$(AR) -r $@ $?
+	@$(AR) -r $@ $?
 
 bonus : $(OBJECTS) $(BOBJECTS)
 	$(AR) -r $(NAME) $?

@@ -6,7 +6,7 @@
 /*   By: ekose <ekose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 22:32:49 by ekose             #+#    #+#             */
-/*   Updated: 2024/02/02 15:44:58 by ekose            ###   ########.fr       */
+/*   Updated: 2024/02/03 12:46:57 by ekose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,12 @@ int	ft_full_free(t_so_long *so_long)
 		i++;
 	}
 	free(so_long->map_rows);
-	mlx_destroy_image(so_long->mlx_connect,so_long->xpm->img_0);
-	mlx_destroy_image(so_long->mlx_connect,so_long->xpm->img_w);
-	mlx_destroy_image(so_long->mlx_connect,so_long->xpm->img_p);
-	mlx_destroy_image(so_long->mlx_connect,so_long->xpm->img_e);
-	mlx_destroy_image(so_long->mlx_connect,so_long->xpm->img_c);
-	mlx_destroy_window(so_long->mlx_connect,so_long->mlx_window);
-	mlx_destroy_display(so_long->mlx_connect);
+	mlx_destroy_image(so_long->mlx_connect, so_long->xpm->img_0);
+	mlx_destroy_image(so_long->mlx_connect, so_long->xpm->img_w);
+	mlx_destroy_image(so_long->mlx_connect, so_long->xpm->img_p);
+	mlx_destroy_image(so_long->mlx_connect, so_long->xpm->img_e);
+	mlx_destroy_image(so_long->mlx_connect, so_long->xpm->img_c);
+	mlx_destroy_window(so_long->mlx_connect, so_long->mlx_window);
 	free(so_long->xpm);
 	free(so_long->mlx_connect);
 	free(so_long);

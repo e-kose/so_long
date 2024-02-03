@@ -1,2 +1,5 @@
- gcc -Wall -Wextra -Werror -I ./mlx -L ./mlx -lmlx -framework OpenGL -framework AppKit  mlx/libmlx.a main.c libft/libft.a  error.c checker.c so_long_utils.c init.c GNL/get_next_line.c GNL/get_next_line_utils.c
- 
+1111111111111111111111111111111
+1111001100C1000000C00011C111111
+100000C00000C00001110000010E111
+100P000110001100011111000001111
+1111111111111111111111111111111

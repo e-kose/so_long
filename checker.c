@@ -6,7 +6,7 @@
 /*   By: ekose <ekose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 14:49:05 by ekose             #+#    #+#             */
-/*   Updated: 2024/02/02 13:25:16 by ekose            ###   ########.fr       */
+/*   Updated: 2024/02/03 17:38:26 by ekose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	ft_check_map_name(t_so_long *so_long)
 	char	*map_way;
 
 	map_way = ft_strjoin("map/", so_long->argv);
+	if (map_way == NULL)
+		ft_error_msg("map way not allocated");
 	fd = open(map_way, O_RDONLY);
 	free(map_way);
 	if (fd == -1)
