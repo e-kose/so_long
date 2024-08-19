@@ -45,4 +45,6 @@ Bu komut, map1.ber adlı harita dosyasını kullanarak oyunu başlatacaktır.
 
 Aşağıda oyunun ekran görüntüsünü görebilirsiniz:
 
-![Oyun Ekran Görüntüsü]()
+![Oyun Ekran Görüntüsü](map_3.png)
+
+![Oyun Ekran Görüntüsü](map_1.png)
