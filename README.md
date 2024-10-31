@@ -14,7 +14,6 @@
 | Kural         | Açıklama                                           |
 |:--------------|:---------------------------------------------------|
 | `make`        | Programı derler.                                  |
-| `make norm`   | Kodun Norminette standartlarına uygunluğunu kontrol eder. |
 | `make clean`  | Derleme objelerini temizler.                      |
 | `make fclean` | `clean` kuralını uygular ve çalıştırılabilir programı siler. |
 | `make re`     | `fclean` kuralını uygular ve programı tekrar derler. |
